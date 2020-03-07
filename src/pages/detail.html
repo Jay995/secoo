@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="../css/detail.css">
+<link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
+
+<link href="../lib/detail/css/hizoom.min.css" rel="stylesheet">
+<script src='../lib/jquery/dist/jquery.min.js'></script>
+<script src='../lib/detail/js/hizoom.min.js'></script>
+</head>
+
+<body>
+    <div id="top">
+        <div class="top-container">
+            <div class="dropdown top-container-left">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true">
+                    中文
+                    <span class="caret"></span>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li>
+                            <a href="#">中文</a>
+                        </li>
+                        <li>
+                            <a href="#">EN</a>
+                        </li>
+                    </ul>
+                </button>
+                <span>RMB￥</span>
+
+            </div>
+            <div class="top-container-min">
+                <a href="" style="height: 80px;">
+                    <img src="http://pic10.secooimg.com/push/18/11/013e7d9eb7674c799c3c21e84dd1c88a.jpg" alt="寺库">
+                </a>
+            </div>
+            <div class="top-container-right">
+                <a>登录</a>
+                <a>注册</a>
+                <a style="border:none">
+                    <i class="glyphicon glyphicon-star-empty"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="nav">
+        <div class="nav-container">
+            <ul>
+                <li>首页</li>
+                <li>包袋</li>
+                <li>腕表</li>
+                <li>珠宝首饰</li>
+                <li>服装</li>
+                <li>鞋履</li>
+                <li>配饰</li>
+                <li>活动</li>
+                <li>家具</li>
+                <li>美妆</li>
+                <li>生活方式</li>
+            </ul>
+            <div class="nav-reserch">
+                <input type="text" value="搜索">
+                <span class="glyphicon glyphicon-search"></span>
+            </div>
+        </div>
+    </div>
+    <div id="address">
+        <div class="address-con"></div>
+    </div>
+     
+    <div id="detail">
+        <div class="detail-con">
+            <div class="detail-con-list">
+                <img src="http://pic11.secooimg.com/product/80/80/2019/1018/272bf2c603ab4f588644f3a56a6cfee3.jpg" width="80" height="80">
+                <img src="http://pic11.secooimg.com/product/80/80/2019/1018/1bdc45020d6d4a0790149bc1af015b96.jpg" width="80" height="80">
+                <img src="http://pic11.secooimg.com/product/80/80/2019/1018/087cf84567214b96aa50eb98bbb0797f.jpg" width="80" height="80">
+                <img src="http://pic11.secooimg.com/product/80/80/2019/1018/95f801273f5b4dd4b3f18fdddad8c1d0.jpg" width="80" height="80">
+            </div>
+            <div class='hizoom gakki fangda'>
+                <img id="bigimg" src="http://pic11.secooimg.com/product/500/500/2019/1018/272bf2c603ab4f588644f3a56a6cfee3.jpg">
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+    <script>
+        //准备一个数组，存放图片地址
+        var arr = ["http://pic11.secooimg.com/product/500/500/2019/1018/272bf2c603ab4f588644f3a56a6cfee3.jpg","http://pic11.secooimg.com/product/500/500/2019/1018/1bdc45020d6d4a0790149bc1af015b96.jpg","http://pic11.secooimg.com/product/500/500/2019/1018/087cf84567214b96aa50eb98bbb0797f.jpg","http://pic11.secooimg.com/product/500/500/2019/1018/95f801273f5b4dd4b3f18fdddad8c1d0.jpg"]
+        $('.gakki').hiZoom({
+            width: 400,
+            position: 'right'
+        });
+        $('.ldy').hiZoom({
+            width: 300,
+            position: 'left'
+        });  
+        
+        $(".detail-con-list>img").hover(function(){
+            // console.log($(this).index())
+            // $(".fangda>img").attr("src",`"${arr[$(this).index()]}"`)
+            var img = document.getElementById("bigimg");
+            img.src = `${arr[$(this).index()]}`
+        })
+    </script>
+</body>
+</html>
